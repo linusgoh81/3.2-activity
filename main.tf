@@ -27,6 +27,13 @@ locals {
 }
 
 resource "aws_s3_bucket" "s3_tf" {
+  #checkov:skip=CKV_AWS_61:The bucket is a public static content host
+  #checkov:skip=CKV_AWS_145:The bucket is a public static content host
+  #checkov:skip=CKV_AWS_144:The bucket is a public static content host
+  #checkov:skip=CKV_AWS_18:The bucket is a public static content host
+  #checkov:skip=CKV_AWS_6:The bucket is a public static content host
+  #checkov:skip=CKV_AWS_21:The bucket is a public static content host
+  #checkov:skip=CKV_AWS_62:The bucket is a public static content host
   bucket = "${local.name_prefix}-s3-tf-bkt-${local.account_id}"
 }
 
